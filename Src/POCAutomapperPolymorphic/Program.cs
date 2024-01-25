@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using AutoMapper;
 using POCAutomapperPolymorphic.Dtos;
@@ -7,6 +8,7 @@ using POCAutomapperPolymorphic.Profiles;
 
 namespace POCAutomapperPolymorphic;
 
+[ExcludeFromCodeCoverage]
 internal class Program
 {
     private static void Main(string[] _)
