@@ -1,6 +1,6 @@
-using System.IO;
 using AutoMapper;
 using POCAutomapperPolymorphic.Profiles;
+using Xunit;
 
 namespace POCAutomapperPolymorphic.Tests;
 
