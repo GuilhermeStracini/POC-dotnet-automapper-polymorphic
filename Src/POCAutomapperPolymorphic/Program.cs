@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using System.Text.Json;
+﻿using System.Text.Json;
 using AutoMapper;
 using POCAutomapperPolymorphic.Dtos;
 using POCAutomapperPolymorphic.Models;
@@ -9,7 +8,7 @@ namespace POCAutomapperPolymorphic;
 
 internal class Program
 {
-    private static void Main(string[] args)
+    private static void Main(string[] _)
     {
         Console.WriteLine("Hello, World!");
 
