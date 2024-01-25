@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POCAutomapperPolymorphic", "Src\POCAutomapperPolymorphic\POCAutomapperPolymorphic.csproj", "{BCA44DA4-6924-454F-B6CF-1641919116C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{CCC4A11C-0E11-47B6-822F-8BDEB7D6E9B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DD2C7A15-E524-4049-B120-E34BD5FE0922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POCAutomapperPolymorphic.Tests", "Tests\POCAutomapperPolymorpic.Tests\POCAutomapperPolymorphic.Tests.csproj", "{38D3DCB6-35D0-4E54-99CE-A6664DC63D1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCA44DA4-6924-454F-B6CF-1641919116C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCA44DA4-6924-454F-B6CF-1641919116C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCA44DA4-6924-454F-B6CF-1641919116C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCA44DA4-6924-454F-B6CF-1641919116C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D3DCB6-35D0-4E54-99CE-A6664DC63D1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D3DCB6-35D0-4E54-99CE-A6664DC63D1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D3DCB6-35D0-4E54-99CE-A6664DC63D1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D3DCB6-35D0-4E54-99CE-A6664DC63D1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BCA44DA4-6924-454F-B6CF-1641919116C4} = {CCC4A11C-0E11-47B6-822F-8BDEB7D6E9B7}
+		{38D3DCB6-35D0-4E54-99CE-A6664DC63D1F} = {DD2C7A15-E524-4049-B120-E34BD5FE0922}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9F1D3849-AFE0-4BCA-A1BD-C9FAA1710E24}
+	EndGlobalSection
+EndGlobal
