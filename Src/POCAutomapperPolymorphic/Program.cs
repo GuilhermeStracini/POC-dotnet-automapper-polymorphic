@@ -9,8 +9,10 @@ using POCAutomapperPolymorphic.Profiles;
 namespace POCAutomapperPolymorphic;
 
 [ExcludeFromCodeCoverage]
-internal class Program
+internal static class Program
 {
+    private static readonly JsonSerializerOptions _options = new() { WriteIndented = true };
+
     private static void Main(string[] _)
     {
         Console.WriteLine("Hello, World!");
@@ -62,24 +64,10 @@ internal class Program
         var derivedA = mapper.Map<DerivedADto>(baseModelWithA.DerivedProperty);
         var derivedB = mapper.Map<DerivedBDto>(baseModelWithB.DerivedProperty);
 
-        var jsonWithA = JsonSerializer.Serialize(
-            dtoWithA,
-            new JsonSerializerOptions { WriteIndented = true }
-        );
-        var jsonWithB = JsonSerializer.Serialize(
-            dtoWithB,
-            new JsonSerializerOptions { WriteIndented = true }
-        );
-
-        var jsonDerivedA = JsonSerializer.Serialize(
-            derivedA,
-            new JsonSerializerOptions { WriteIndented = true }
-        );
-
-        var jsonDerivedB = JsonSerializer.Serialize(
-            derivedB,
-            new JsonSerializerOptions { WriteIndented = true }
-        );
+        var jsonWithA = JsonSerializer.Serialize(dtoWithA, _options);
+        var jsonWithB = JsonSerializer.Serialize(dtoWithB, _options);
+        var jsonDerivedA = JsonSerializer.Serialize(derivedA, _options);
+        var jsonDerivedB = JsonSerializer.Serialize(derivedB, _options);
 
         Console.WriteLine(jsonWithA);
         Console.WriteLine(jsonWithB);
