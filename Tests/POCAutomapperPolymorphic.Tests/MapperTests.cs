@@ -1,9 +1,11 @@
+using System;
 using AutoFixture;
 using AutoMapper;
 using FluentAssertions;
 using POCAutomapperPolymorphic.Dtos;
 using POCAutomapperPolymorphic.Models;
 using POCAutomapperPolymorphic.Profiles;
+using Xunit;
 
 namespace POCAutomapperPolymorphic.Tests;
 

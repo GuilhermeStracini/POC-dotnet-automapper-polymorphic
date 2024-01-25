@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using AutoMapper;
 using POCAutomapperPolymorphic.Dtos;
@@ -7,9 +8,10 @@ using POCAutomapperPolymorphic.Profiles;
 
 namespace POCAutomapperPolymorphic;
 
+[ExcludeFromCodeCoverage]
 internal class Program
 {
-    private static void Main(string[] args)
+    private static void Main(string[] _)
     {
         Console.WriteLine("Hello, World!");
 
@@ -21,7 +23,7 @@ internal class Program
             {
                 GuidProperty = Guid.NewGuid(),
                 StringProperty = "Inner",
-                DateOnlyProperty = DateOnly.FromDateTime(DateTime.Now),
+                DateOnlyProperty = DateOnly.FromDateTime(DateTime.UtcNow),
                 DateTimeOffsetProperty = DateTimeOffset.Now,
             },
             DerivedProperty = new DerivedAModel
@@ -39,7 +41,7 @@ internal class Program
             {
                 GuidProperty = Guid.NewGuid(),
                 StringProperty = "Inner",
-                DateOnlyProperty = DateOnly.FromDateTime(DateTime.Now),
+                DateOnlyProperty = DateOnly.FromDateTime(DateTime.UtcNow),
                 DateTimeOffsetProperty = DateTimeOffset.Now,
             },
             DerivedProperty = new DerivedBModel

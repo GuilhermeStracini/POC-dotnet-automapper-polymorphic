@@ -1,4 +1,6 @@
-﻿namespace POCAutomapperPolymorphic.Dtos;
+﻿using System;
+
+namespace POCAutomapperPolymorphic.Dtos;
 
 public class DerivedBDto : DerivedBaseDto
 {
