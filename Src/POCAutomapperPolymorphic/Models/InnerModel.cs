@@ -1,4 +1,6 @@
-﻿namespace POCAutomapperPolymorphic.Models;
+﻿using System;
+
+namespace POCAutomapperPolymorphic.Models;
 
 public class InnerModel
 {
