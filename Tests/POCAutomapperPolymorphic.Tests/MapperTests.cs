@@ -50,8 +50,7 @@ public class MapperTests
         dto.InnerProperty.GuidProperty.Should().Be(baseModel.InnerProperty.GuidProperty);
         dto.InnerProperty.StringProperty.Should().Be(baseModel.InnerProperty.StringProperty);
         dto.InnerProperty.DateOnlyProperty.Should().Be(baseModel.InnerProperty.DateOnlyProperty);
-        dto
-            .InnerProperty.DateTimeOffsetProperty.Should()
+        dto.InnerProperty.DateTimeOffsetProperty.Should()
             .Be(baseModel.InnerProperty.DateTimeOffsetProperty);
         dto.DerivedProperty.Should().NotBeNull();
         dto.DerivedProperty.Should().BeAssignableTo<DerivedBaseDto>();
@@ -94,8 +93,7 @@ public class MapperTests
         dto.InnerProperty.GuidProperty.Should().Be(baseModel.InnerProperty.GuidProperty);
         dto.InnerProperty.StringProperty.Should().Be(baseModel.InnerProperty.StringProperty);
         dto.InnerProperty.DateOnlyProperty.Should().Be(baseModel.InnerProperty.DateOnlyProperty);
-        dto
-            .InnerProperty.DateTimeOffsetProperty.Should()
+        dto.InnerProperty.DateTimeOffsetProperty.Should()
             .Be(baseModel.InnerProperty.DateTimeOffsetProperty);
         dto.DerivedProperty.Should().NotBeNull();
         dto.DerivedProperty.Should().BeAssignableTo<DerivedBaseDto>();
@@ -143,8 +141,7 @@ public class MapperTests
         dto.InnerProperty.GuidProperty.Should().Be(baseModel.InnerProperty.GuidProperty);
         dto.InnerProperty.StringProperty.Should().Be(baseModel.InnerProperty.StringProperty);
         dto.InnerProperty.DateOnlyProperty.Should().Be(baseModel.InnerProperty.DateOnlyProperty);
-        dto
-            .InnerProperty.DateTimeOffsetProperty.Should()
+        dto.InnerProperty.DateTimeOffsetProperty.Should()
             .Be(baseModel.InnerProperty.DateTimeOffsetProperty);
         dto.DerivedProperty.Should().NotBeNull();
         dto.DerivedProperty.Should().BeAssignableTo<DerivedBaseDto>();
