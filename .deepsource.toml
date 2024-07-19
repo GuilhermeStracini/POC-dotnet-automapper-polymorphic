@@ -6,4 +6,10 @@ test_patterns = ["Tests/**"]
 name = "test-coverage"
 
 [[analyzers]]
+name = "secrets"
+
+[[analyzers]]
 name = "csharp"
+
+[[analyzers]]
+name = "docker"
