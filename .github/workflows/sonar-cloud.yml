@@ -47,10 +47,10 @@ jobs:
           
       - name: Set SonarCloud variables
         run: |
-          KEY=${{ github.repository_owner }}_${{ github.event.repository.name }}
-          ORG=${{ github.repository_owner }}
-          echo "KEY=${KEY}" >> "${GITHUB_ENV}" # Keep the KEY variable as it without any modification
-          echo "ORG=${ORG@L}" >> "${GITHUB_ENV}" # Lowercase the ORG name
+          KEY="${{ github.repository_owner }}_${{ github.event.repository.name }}"
+          ORG="${{ github.repository_owner }}"
+          echo "KEY=${KEY}" >> "${GITHUB_ENV}"  # Keep the variable KEY as it
+          echo "ORG=${ORG@L}" >> "${GITHUB_ENV}" # Lowercase the ORG variable
       
       - name: Build and analyze
         env:
