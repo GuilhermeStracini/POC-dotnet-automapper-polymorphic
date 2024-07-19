@@ -46,6 +46,7 @@ jobs:
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
           
       - name: Set SonarCloud variables
+        shell: bash
         run: |
           KEY="${{ github.repository_owner }}_${{ github.event.repository.name }}"
           ORG="${{ github.repository_owner }}"
