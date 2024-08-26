@@ -52,7 +52,7 @@ public class SerializerTests
                 DateOnlyProperty = DateOnly.FromDayNumber(0),
                 DateTimeOffsetProperty = DateTimeOffset.UnixEpoch,
             },
-            DerivedProperty = new DerivedBaseModel { GuidProperty = Guid.Empty }
+            DerivedProperty = new DerivedBaseModel { GuidProperty = Guid.Empty },
         };
 
         // Act
@@ -110,7 +110,7 @@ public class SerializerTests
                 DateOnlyProperty = DateOnly.FromDayNumber(0),
                 DateTimeOffsetProperty = DateTimeOffset.UnixEpoch,
             },
-            DerivedProperty = derivedAModel
+            DerivedProperty = derivedAModel,
         };
 
         // Act
@@ -165,7 +165,7 @@ public class SerializerTests
         {
             GuidProperty = Guid.Empty,
             BProperty = "B",
-            BGuidProperty = Guid.Empty
+            BGuidProperty = Guid.Empty,
         };
         var baseModel = new BaseModel
         {
@@ -178,7 +178,7 @@ public class SerializerTests
                 DateOnlyProperty = DateOnly.FromDayNumber(0),
                 DateTimeOffsetProperty = DateTimeOffset.UnixEpoch,
             },
-            DerivedProperty = derivedBModel
+            DerivedProperty = derivedBModel,
         };
 
         // Act

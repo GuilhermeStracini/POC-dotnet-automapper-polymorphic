@@ -31,8 +31,8 @@ internal static class Program
             DerivedProperty = new DerivedAModel
             {
                 GuidProperty = Guid.NewGuid(),
-                AProperty = "DerivedA"
-            }
+                AProperty = "DerivedA",
+            },
         };
 
         var baseModelWithB = new BaseModel
@@ -50,8 +50,8 @@ internal static class Program
             {
                 GuidProperty = Guid.NewGuid(),
                 BProperty = "DerivedB",
-                BGuidProperty = Guid.NewGuid()
-            }
+                BGuidProperty = Guid.NewGuid(),
+            },
         };
 
         var config = new MapperConfiguration(cfg => cfg.AddProfile<MapperProfile>());
