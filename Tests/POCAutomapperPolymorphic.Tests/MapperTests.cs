@@ -21,6 +21,17 @@ public class MapperTests
         _mapper = config.CreateMapper();
     }
 
+    /// <summary>
+    /// Tests the mapping functionality from a base model to a data transfer object (DTO).
+    /// </summary>
+    /// <remarks>
+    /// This unit test verifies that the properties of the <see cref="BaseModel"/> are correctly mapped to the
+    /// corresponding properties of the <see cref="BaseDto"/>. It creates an instance of <see cref="BaseModel"/>
+    /// with various properties, including nested objects, and then uses an object mapper to convert it into a
+    /// <see cref="BaseDto"/>. The test checks that all properties are mapped accurately, ensuring that the
+    /// mapping logic is functioning as expected. Additionally, it verifies that the derived properties are
+    /// correctly assigned and that they adhere to the expected types.
+    /// </remarks>
     [Fact]
     public void MapperShouldMapBaseClass()
     {
@@ -59,6 +70,18 @@ public class MapperTests
         dto.DerivedProperty.GuidProperty.Should().Be(baseModel.DerivedProperty.GuidProperty);
     }
 
+    /// <summary>
+    /// Tests the mapping of a derived model to a Data Transfer Object (DTO).
+    /// </summary>
+    /// <remarks>
+    /// This unit test verifies that the mapping from a <see cref="BaseModel"/> instance to a <see cref="BaseDto"/>
+    /// instance is performed correctly. It sets up a <see cref="BaseModel"/> with various properties, including
+    /// a derived model <see cref="DerivedAModel"/>. The test then invokes the mapping function and asserts that
+    /// the resulting DTO has the expected properties and values. It checks that the inner properties are mapped
+    /// correctly and that the derived property is of the correct type and contains the expected values.
+    /// The test ensures that the mapping logic handles derived types appropriately, confirming that the
+    /// <see cref="DerivedADto"/> is correctly populated from the <see cref="DerivedAModel"/>.
+    /// </remarks>
     [Fact]
     public void MapperShouldMapDerivedA()
     {
@@ -106,6 +129,19 @@ public class MapperTests
         derivedADto.AProperty.Should().Be(derivedAModel.AProperty);
     }
 
+    /// <summary>
+    /// Tests the mapping functionality from a <see cref="BaseModel"/> to a <see cref="BaseDto"/>
+    /// specifically for the derived type <see cref="DerivedBModel"/>.
+    /// </summary>
+    /// <remarks>
+    /// This unit test method sets up a <see cref="BaseModel"/> instance containing properties
+    /// including a derived model of type <see cref="DerivedBModel"/>. It uses AutoMapper to map
+    /// the base model to a data transfer object (DTO) of type <see cref="BaseDto"/>.
+    /// The test then asserts that the resulting DTO is not null and that all properties are correctly
+    /// mapped from the original model to the DTO, including nested properties.
+    /// It also verifies that the derived property in the DTO is of the expected type and contains
+    /// the correct values from the derived model.
+    /// </remarks>
     [Fact]
     public void MapperShouldMapDerivedB()
     {

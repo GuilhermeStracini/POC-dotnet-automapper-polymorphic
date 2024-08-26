@@ -22,6 +22,16 @@ public class SerializerTests
         _mapper = config.CreateMapper();
     }
 
+    /// <summary>
+    /// Tests the serialization of a base class model to JSON format.
+    /// </summary>
+    /// <remarks>
+    /// This unit test verifies that the properties of the <see cref="BaseModel"/> are correctly mapped to a <see cref="BaseDto"/>
+    /// and serialized into the expected JSON structure. It sets up a base model with various properties, including an inner
+    /// model and a derived property. The test checks that the mapped DTO is not null and that all properties match the
+    /// original model's values. Additionally, it ensures that the serialized JSON output matches the expected JSON string.
+    /// The test uses FluentAssertions for assertions to improve readability and maintainability.
+    /// </remarks>
     [Fact]
     public void SerializeBaseClass()
     {
@@ -79,6 +89,20 @@ public class SerializerTests
         json.Should().Be(expectedJson);
     }
 
+    /// <summary>
+    /// Tests the mapping of a derived model to a Data Transfer Object (DTO).
+    /// </summary>
+    /// <remarks>
+    /// This unit test verifies that the mapping from a <see cref="BaseModel"/> to a <see cref="BaseDto"/>
+    /// is performed correctly by the mapper. It creates an instance of <see cref="BaseModel"/> with
+    /// nested properties, including a derived property of type <see cref="DerivedAModel"/>.
+    /// The test checks that all properties are mapped accurately, including nested properties,
+    /// and that the resulting JSON representation matches the expected format.
+    /// The assertions ensure that the mapped DTO is not null and that its properties
+    /// correspond to those of the original model. Additionally, it verifies that the derived property
+    /// is of the correct type and contains the expected values.
+    /// </remarks>
+    /// <exception cref="System.Exception">Thrown when the mapping does not produce the expected results.</exception>
     [Fact]
     public void MapperShouldMapDerivedA()
     {
@@ -141,6 +165,17 @@ public class SerializerTests
         json.Should().Be(expectedJson);
     }
 
+    /// <summary>
+    /// Tests the mapping of a BaseModel to a BaseDto, ensuring that all properties are correctly mapped.
+    /// </summary>
+    /// <remarks>
+    /// This unit test verifies the functionality of the mapping process between the BaseModel and BaseDto classes.
+    /// It creates instances of these models, populates them with sample data, and then uses an object mapper to convert
+    /// the BaseModel into a BaseDto. The test checks that all properties in the BaseDto match the expected values
+    /// from the BaseModel, including nested properties and derived types. Additionally, it serializes the resulting
+    /// BaseDto into JSON format and compares it against an expected JSON string to ensure that the serialization
+    /// process is also functioning correctly. The test uses FluentAssertions for clear and expressive assertions.
+    /// </remarks>
     [Fact]
     public void MapperShouldMapDerivedB()
     {
