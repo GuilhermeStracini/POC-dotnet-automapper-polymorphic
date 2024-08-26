@@ -13,6 +13,16 @@ internal static class Program
 {
     private static readonly JsonSerializerOptions _options = new() { WriteIndented = true };
 
+    /// <summary>
+    /// The entry point of the application that demonstrates object mapping and serialization.
+    /// </summary>
+    /// <remarks>
+    /// This method initializes two instances of <see cref="BaseModel"/> with different derived properties,
+    /// each containing various nested properties. It uses AutoMapper to map these models to their corresponding
+    /// Data Transfer Objects (DTOs). After mapping, it serializes the resulting DTOs into JSON format using
+    /// <see cref="JsonSerializer"/> and prints the JSON strings to the console.
+    /// The method also validates the mapping configuration to ensure that all mappings are correctly set up.
+    /// </remarks>
     private static void Main(string[] _)
     {
         Console.WriteLine("Hello, World!");
