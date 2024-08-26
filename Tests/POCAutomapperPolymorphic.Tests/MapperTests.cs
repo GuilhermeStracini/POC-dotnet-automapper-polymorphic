@@ -36,7 +36,7 @@ public class MapperTests
                 DateOnlyProperty = DateOnly.FromDateTime(_fixture.Create<DateTime>()),
                 DateTimeOffsetProperty = _fixture.Create<DateTimeOffset>(),
             },
-            DerivedProperty = new DerivedBaseModel { GuidProperty = _fixture.Create<Guid>() }
+            DerivedProperty = new DerivedBaseModel { GuidProperty = _fixture.Create<Guid>() },
         };
 
         // Act
@@ -66,7 +66,7 @@ public class MapperTests
         var derivedAModel = new DerivedAModel
         {
             GuidProperty = _fixture.Create<Guid>(),
-            AProperty = _fixture.Create<string>()
+            AProperty = _fixture.Create<string>(),
         };
         var baseModel = new BaseModel
         {
@@ -79,7 +79,7 @@ public class MapperTests
                 DateOnlyProperty = DateOnly.FromDateTime(_fixture.Create<DateTime>()),
                 DateTimeOffsetProperty = _fixture.Create<DateTimeOffset>(),
             },
-            DerivedProperty = derivedAModel
+            DerivedProperty = derivedAModel,
         };
 
         // Act
@@ -114,7 +114,7 @@ public class MapperTests
         {
             GuidProperty = _fixture.Create<Guid>(),
             BProperty = _fixture.Create<string>(),
-            BGuidProperty = _fixture.Create<Guid>()
+            BGuidProperty = _fixture.Create<Guid>(),
         };
         var baseModel = new BaseModel
         {
@@ -127,7 +127,7 @@ public class MapperTests
                 DateOnlyProperty = DateOnly.FromDateTime(_fixture.Create<DateTime>()),
                 DateTimeOffsetProperty = _fixture.Create<DateTimeOffset>(),
             },
-            DerivedProperty = derivedBModel
+            DerivedProperty = derivedBModel,
         };
 
         // Act
