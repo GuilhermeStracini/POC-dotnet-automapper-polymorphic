@@ -2,6 +2,7 @@ using System;
 using AutoFixture;
 using AutoMapper;
 using FluentAssertions;
+using Microsoft.Extensions.Logging.Abstractions;
 using POCAutomapperPolymorphic.Dtos;
 using POCAutomapperPolymorphic.Models;
 using POCAutomapperPolymorphic.Profiles;
@@ -16,7 +17,10 @@ public class MapperTests
 
     public MapperTests()
     {
-        var config = new MapperConfiguration(cfg => cfg.AddProfile<MapperProfile>());
+        var config = new MapperConfiguration(
+            cfg => cfg.AddProfile<MapperProfile>(),
+            NullLoggerFactory.Instance
+        );
         config.AssertConfigurationIsValid();
         _mapper = config.CreateMapper();
     }
