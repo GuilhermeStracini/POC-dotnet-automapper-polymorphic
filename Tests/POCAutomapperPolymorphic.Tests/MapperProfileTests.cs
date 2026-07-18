@@ -1,4 +1,5 @@
 using AutoMapper;
+using Microsoft.Extensions.Logging.Abstractions;
 using POCAutomapperPolymorphic.Profiles;
 using Xunit;
 
@@ -9,7 +10,10 @@ public class MapperProfileTests
     [Fact]
     public void MapperProfileIsValid()
     {
-        var config = new MapperConfiguration(cfg => cfg.AddProfile<MapperProfile>());
+        var config = new MapperConfiguration(
+            cfg => cfg.AddProfile<MapperProfile>(),
+            NullLoggerFactory.Instance
+        );
         config.AssertConfigurationIsValid();
     }
 }
