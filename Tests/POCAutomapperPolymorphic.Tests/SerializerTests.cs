@@ -2,6 +2,7 @@ using System;
 using System.Text.Json;
 using AutoMapper;
 using FluentAssertions;
+using Microsoft.Extensions.Logging.Abstractions;
 using POCAutomapperPolymorphic.Dtos;
 using POCAutomapperPolymorphic.Models;
 using POCAutomapperPolymorphic.Profiles;
@@ -17,7 +18,10 @@ public class SerializerTests
 
     public SerializerTests()
     {
-        var config = new MapperConfiguration(cfg => cfg.AddProfile<MapperProfile>());
+        var config = new MapperConfiguration(
+            cfg => cfg.AddProfile<MapperProfile>(),
+            NullLoggerFactory.Instance
+        );
         config.AssertConfigurationIsValid();
         _mapper = config.CreateMapper();
     }
@@ -86,7 +90,7 @@ public class SerializerTests
         dto.DerivedProperty.GuidProperty.Should().Be(baseModel.DerivedProperty.GuidProperty);
 
         json.Should().NotBeNullOrEmpty();
-        json.Should().Be(expectedJson);
+        json.ReplaceLineEndings("\n").Should().Be(expectedJson.ReplaceLineEndings("\n"));
     }
 
     /// <summary>
@@ -162,7 +166,7 @@ public class SerializerTests
         derivedADto.AProperty.Should().Be(derivedAModel.AProperty);
 
         json.Should().NotBeNullOrEmpty();
-        json.Should().Be(expectedJson);
+        json.ReplaceLineEndings("\n").Should().Be(expectedJson.ReplaceLineEndings("\n"));
     }
 
     /// <summary>
@@ -242,6 +246,6 @@ public class SerializerTests
         derivedBDto.BGuidProperty.Should().Be(derivedBModel.BGuidProperty);
 
         json.Should().NotBeNullOrEmpty();
-        json.Should().Be(expectedJson);
+        json.ReplaceLineEndings("\n").Should().Be(expectedJson.ReplaceLineEndings("\n"));
     }
 }
