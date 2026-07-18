@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using AutoMapper;
+using Microsoft.Extensions.Logging.Abstractions;
 using POCAutomapperPolymorphic.Dtos;
 using POCAutomapperPolymorphic.Models;
 using POCAutomapperPolymorphic.Profiles;
@@ -64,7 +65,10 @@ internal static class Program
             },
         };
 
-        var config = new MapperConfiguration(cfg => cfg.AddProfile<MapperProfile>());
+        var config = new MapperConfiguration(
+            cfg => cfg.AddProfile<MapperProfile>(),
+            NullLoggerFactory.Instance
+        );
         config.AssertConfigurationIsValid();
         var mapper = config.CreateMapper();
 
